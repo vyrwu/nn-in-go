@@ -2,6 +2,11 @@ package nn
 
 import "math"
 
+type ActivationFunction struct {
+	Primary    func(v float64) float64
+	Derivative func(v float64) float64
+}
+
 // sigmoid implents sigmoid function
 // our activation function
 func sigmoid(x float64) float64 {

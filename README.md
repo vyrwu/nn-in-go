@@ -1,6 +1,5 @@
 # nn-in-go
-Neural network for classification with sigmoid written from scratch in Go
-
+Simple Neural Network for Supervised learning, solving a problem of classification.
 
 Other packages with premade nn`s :
 github.com/tleyden/neurgo , github.com/fxsjy/gonn , github.com/NOX73/go-

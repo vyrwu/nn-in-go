@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// NeuralNet stores  info on trained nn network
+// NeuralNet stores info on trained nn network
 type NeuralNet struct {
 	config  NeuralNetConfig
 	wHidden *mat.Dense
@@ -23,6 +23,7 @@ type NeuralNetConfig struct {
 	hiddenNeurons int
 	numEpochs     int
 	learningRate  float64
+	activationFunction ActivationFunction
 }
 
 // NewNetwork initializaes a new nn network
@@ -69,7 +70,7 @@ func (nn *NeuralNet) Train(x, y *mat.Dense) error {
 		// perform activation
 		hiddenLayerActivations := new(mat.Dense)
 		applySigmoid := func(_, _ int, v float64) float64 {
-			return sigmoid(v)
+			return nn.config.activationFunction.Primary(v)
 		}
 		hiddenLayerActivations.Apply(applySigmoid, hiddenLayerInput)
 

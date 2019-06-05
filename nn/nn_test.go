@@ -15,7 +15,6 @@ func TestTraining(t *testing.T) {
 		log.Fatal(err)
 	}
 	defer file.Close()
-
 	inputs, labels, _ := loadDataFromCSV(file)
 
 	// CONFIGURE NEURAL NETWORK
@@ -27,16 +26,19 @@ func TestTraining(t *testing.T) {
 		inputNeurons:  4,
 		outputNeurons: 3,
 		hiddenNeurons: 3,
-		numEpochs:     50000,
-		learningRate:  0.3,
+		numEpochs:     100,
+		learningRate:  0.1,
+		activationFunction: ActivationFunction{
+			sigmoid,
+			sigmoidPrime,
+		},
 	}
-
 	network := NewNetwork(*config)
 	if err := network.Train(inputs, labels); err != nil {
 		log.Fatal(err)
 	}
 
-	printTrained(network)
+	//printTrained(network)
 	validate(network)
 }
 
