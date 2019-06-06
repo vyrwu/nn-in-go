@@ -1,7 +1,7 @@
 # nn-in-go
-Simple Neural Network for Supervised learning, solving a problem of classification.
-
-Other packages with premade nn`s :
-github.com/tleyden/neurgo , github.com/fxsjy/gonn , github.com/NOX73/go-
-neural , github.com/milosgajdos83/gosom , github.com/made2591/go-perceptron-
-go , and github.com/chewxy/gorgonia .
+Mandatory mini-project for the Artificial Intelligence Programming course. The topic of the mini-project was chosen to 
+be an implementation of a neural network model for supervised learning from scratch using only mathematical matrix 
+transformations and a Golang programming language. The implementation and training data set of the Neural Network implemented for the mini-project was heavily 
+ inspired by the aforementioned book. The report of the mini-project consists of a presentation of a Neural Network 
+ Architecture that was chosen as model candidate for the implementation, the description of the data set chosen for 
+ model training and validation, and the overview into programmed implementation of a neural network.
